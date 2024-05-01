@@ -18,19 +18,21 @@ export default async function Home() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">Invoice</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead>todo</TableHead>
+            <TableHead>score</TableHead>
+            <TableHead>isDone</TableHead>
+            <TableHead>createAt</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">INV001</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Credit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
-          </TableRow>
+          {todos.map((todo) => (
+            <TableRow key={todo.id}>
+              <TableCell>{todo.todo}</TableCell>
+              <TableCell>{todo.score}</TableCell>
+              <TableCell>{todo.isDone}</TableCell>
+              <TableCell>{todo.createAt}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </main>
