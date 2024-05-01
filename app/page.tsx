@@ -1,11 +1,4 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import TodoTable from "./components/todo-table";
 
 export default async function Home() {
   const res = await fetch(
@@ -15,26 +8,7 @@ export default async function Home() {
   console.log(todos);
   return (
     <main className="">
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>todo</TableHead>
-            <TableHead>score</TableHead>
-            <TableHead>isDone</TableHead>
-            <TableHead>createAt</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {todos.map((todo) => (
-            <TableRow key={todo.id}>
-              <TableCell>{todo.todo}</TableCell>
-              <TableCell>{todo.score}</TableCell>
-              <TableCell>{todo.isDone}</TableCell>
-              <TableCell>{todo.createAt}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      <TodoTable todos={todos} />
     </main>
   );
 }
