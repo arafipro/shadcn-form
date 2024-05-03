@@ -1,3 +1,4 @@
+import TodoForm from "./components/todo-form";
 import TodoTable from "./components/todo-table";
 
 export default async function Home() {
@@ -8,6 +9,7 @@ export default async function Home() {
   console.log(todos);
   return (
     <main className="">
+      <TodoForm />
       <TodoTable todos={todos} />
     </main>
   );
