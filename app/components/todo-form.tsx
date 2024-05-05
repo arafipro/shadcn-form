@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -25,14 +26,23 @@ const todoSchema = z.object({
 const createTodoSchema = todoSchema.pick({ todo: true });
 
 export default function TodoForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof createTodoSchema>>({
-    resolver: zodResolver(todoSchema),
+    resolver: zodResolver(createTodoSchema),
     defaultValues: {
       todo: "",
     },
   });
-  function onSubmit(values: z.infer<typeof createTodoSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof createTodoSchema>) {
+    await fetch("https://todo-drizzle-api.arafipro.workers.dev/api/todos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+    router.refresh();
+    form.reset();
   }
   return (
     <Form {...form}>
