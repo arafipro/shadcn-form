@@ -1,6 +1,8 @@
 import TodoForm from "./components/todo-form";
 import TodoTable from "./components/todo-table";
 
+export const runtime = "edge";
+
 export default async function Home() {
   const res = await fetch(
     "https://todo-drizzle-api.arafipro.workers.dev/api/todos",
