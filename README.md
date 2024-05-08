@@ -1,8 +1,8 @@
-# 【React Hook Form】【zod】shadcn/uiを使って、リッチな入力フォームを作る
+# 【React Hook Form】【zod】shadcn/uiを使って、zodを中心に入力フォームを作る
 
 ## YouTube
 
-[!["【React Hook Form】【zod】shadcn/uiを使って、リッチな入力フォームを作る"](https://i.ytimg.com/vi/PQeW8gLI5Eg/maxresdefault.jpg)](https://youtu.be/PQeW8gLI5Eg)
+[!["【React Hook Form】【zod】shadcn/uiを使って、zodを中心に入力フォームを作る"](https://i.ytimg.com/vi/PQeW8gLI5Eg/maxresdefault.jpg)](https://youtu.be/PQeW8gLI5Eg)
 
 ## 技術選定
 
